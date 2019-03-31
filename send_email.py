@@ -2,14 +2,14 @@ from email.mime.text import MIMEText
 import smtplib
 
 
-def send_email(email, height):
+def send_email(email, height, avg_height):
     """Function to send average height to entered email."""
     from_email = 'django.ab.123@gmail.com'
     from_password = 'bev12345'
     to_email = email
 
     subject = 'Height data'
-    message = f'Hello, your height is <strong>{height}</strong>.'
+    message = f'Hello, your height is <strong>{height}</strong> inches. The average height is <strong>{avg_height}</strong> inches.'
 
     msg = MIMEText(message, 'html')
     msg['Subject'] = subject
