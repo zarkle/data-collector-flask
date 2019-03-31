@@ -42,7 +42,8 @@ def success():
             db.session.commit()
             avg_height = db.session.query(func.avg(Data.height)).scalar()
             avg_height = round(avg_height)
-            send_email(email, height, avg_height)
+            count = db.session.query(Data.height).count()
+            send_email(email, height, avg_height, count)
             return render_template('success.html')
         return render_template('index.html', text="Email already in system. Please enter a new email address.")
 
