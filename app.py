@@ -40,7 +40,7 @@ def success():
             db.session.commit()
 
             return render_template('success.html')
-        return render_template('index.html')
+        return render_template('index.html', text="Email already in system. Please enter a new email address.")
 
 
 if __name__ == '__main__':
