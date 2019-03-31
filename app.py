@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_email import send_email
+from sqlalchemy.sql import func
 
 
 app = Flask(__name__)
@@ -40,7 +41,8 @@ def success():
             db.session.add(data)
             db.session.commit()
             send_email(email, height)
-
+            avg_height = db.session.query(func.avg(Data.height)).scalar()
+            avg_height = round(avg_height)
             return render_template('success.html')
         return render_template('index.html', text="Email already in system. Please enter a new email address.")
 
