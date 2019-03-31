@@ -10,6 +10,9 @@
   <div class="container">
     <h1>Collecting Height Data</h1>
     <h3>Please fill in the form to get population statistics on height</h3>
+    <div class="message">
+      {{text | safe}}
+    </div>
     <form action="{{url_for('success')}}" method="POST">
       <p><input type="email" title="Save your email" placeholder="Enter your email address" name="email_name" required></p>
       <p><input type="number" title="Save your email" placeholder="Enter your height in feet" min="24" max="84" name="height" required></p>
