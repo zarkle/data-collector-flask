@@ -34,6 +34,11 @@ def success():
     if request.method=='POST':
         email = request.form['email_name']
         height = request.form['height']
+
+        data = Data(email, height)
+        db.session.add(data)
+        db.session.commit()
+
         return render_template('success.html')
 
 
