@@ -1,6 +1,7 @@
 body {
   height: 100%;
-  margin: 0
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -14,7 +15,6 @@ body {
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   color: green;
   margin: 5px;
 }
@@ -42,7 +42,6 @@ button {
 }
 
 .message {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   color: blue;
 }
